@@ -17,27 +17,27 @@ npx playwright install chrome
 ## 使い方
 
 ```bash
-node register-nanaco-gift.mjs <giftTextFile> <nanacoNumber> [--card-number <7digits>] [--encoding <name>]
+node register-nanaco-gift.mjs <giftTextFile> <nanacoNumber> [--encoding <name>]
 ```
 
 またはシェルラッパー:
 
 ```bash
-./register-nanaco-gift.sh <giftTextFile> <nanacoNumber> [--card-number <7digits>] [--encoding <name>]
+./register-nanaco-gift.sh <giftTextFile> <nanacoNumber> [--encoding <name>]
 ```
 
 ## 引数
 
 - `<giftTextFile>`: ギフトURLを含むテキスト
 - `<nanacoNumber>`: 16桁のnanaco番号
-- `--card-number <7digits>`: nanacoカードログイン用の7桁カード番号
 - `--encoding <name>`: 入力ファイルの文字コードを指定（`utf-8`, `utf-16le`, `utf-16be`, `unicode`, `bigendianunicode`）
 
 ## 環境変数
 
-以下を必要に応じて設定してください。
+以下のどちらか一方だけを設定してください。
 
 - `NANACO_PASSWORD`: nanacoモバイルログインのパスワード
+- `NANACO_CARD_NUMBER`: nanacoカードログイン用の7桁カード番号
 
 ## 例
 
@@ -45,13 +45,14 @@ node register-nanaco-gift.mjs <giftTextFile> <nanacoNumber> [--card-number <7dig
 
 ```bash
 export NANACO_PASSWORD='your-password'
-./register-nanaco-gift.sh mail-text.txt 1234567890123456
+node register-nanaco-gift.mjs mail-text.txt 1234567890123456
 ```
 
 カード番号ログイン:
 
 ```bash
-./register-nanaco-gift.sh mail-text.txt 1234567890123456 --card-number 1234567
+export NANACO_CARD_NUMBER='1234567'
+./register-nanaco-gift.sh mail-text.txt 1234567890123456
 ```
 
 ## 補足
