@@ -114,7 +114,7 @@ function maskGid(registerUrl) {
 }
 
 async function launchChrome() {
-  return chromium.launch({ channel: "chrome" });
+  return chromium.launch({ channel: "chrome", headless: false });
 }
 
 async function registerOne(page, registerUrl, credentials, nanacoNumber) {
