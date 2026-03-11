@@ -1,0 +1,20 @@
+*.txt
+mail-text*
+node_modules
+.env
+.DS_Store
+*.log
+
+# Node.js
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Build artifacts
+dist/
+coverage/
+
+# Playwright artifacts
+playwright-report/
+test-results/

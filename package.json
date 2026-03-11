@@ -1,0 +1,11 @@
+{
+  "name": "nanaco-gift-automation",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "register": "node register-nanaco-gift.mjs"
+  },
+  "dependencies": {
+    "playwright": "^1.53.0"
+  }
+}
