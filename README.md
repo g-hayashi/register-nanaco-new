@@ -32,6 +32,21 @@ node register-nanaco-gift.mjs <giftTextFile> <nanacoNumber> [--encoding <name>]
 - `<nanacoNumber>`: 16桁のnanaco番号
 - `--encoding <name>`: 入力ファイルの文字コードを指定（`utf-8`, `utf-16le`, `utf-16be`, `unicode`, `bigendianunicode`）
 
+### `<giftTextFile>` のフォーマット
+
+- 1行1URLでなくてもOKです。
+- メール本文のような自由形式テキストから、登録URLを自動で抽出して処理します。
+- 抽出対象は `https://www.nanaco-net.jp/pc/emServlet?gid=...` 形式のURLです。
+
+例:
+
+```text
+いつもありがとうございます。
+以下のURLから登録してください。
+https://www.nanaco-net.jp/pc/emServlet?gid=0EkMX$S1%h8A76A
+このメールは自動送信です。
+```
+
 ## 環境変数
 
 以下のどちらか一方だけを設定してください。
